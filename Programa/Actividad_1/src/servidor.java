@@ -57,7 +57,9 @@ public class servidor {
 							break;
 						case 4:	out.println("AVISO -> Para darse de baja, escriba un correo a bajas@chat.net.\n");
 							break;
-						case 5:	out.println("Hasta pronto");
+						case 5:	out.println("menu");
+							break;
+						case 6:	out.println("Hasta pronto");
 							break;
 						default:
 							out.println("Solo se aceptan las solicitudes mostradas, por favor introduzca un número de la lista.");

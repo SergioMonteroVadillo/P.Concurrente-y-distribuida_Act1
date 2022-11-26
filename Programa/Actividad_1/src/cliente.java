@@ -45,7 +45,8 @@ public class cliente {
 						+"\n\t2 - Registrarse"
 						+ "\n\t3 - Manual de uso"
 						+ "\n\t4 - Bajas"
-						+ "\n\t5 - Salir");
+						+ "\n\t5 - Ver Menu"
+						+ "\n\t6 - Salir");
 
 				inicio = false;
 			}
@@ -64,9 +65,15 @@ public class cliente {
 			//Leemos el buffer de entrada
 			String answer = input.readLine();
 			
+			//Condición para finalizar el programa
+			if (answer.equals("menu")) {				
+				inicio = true;
+			}
+			else {
 			//Imprimimos el mensaje recibido por el servidor
 			System.out.println(answer);			
-
+			}
+			
 			//Condición para finalizar el programa
 			if (answer.equals("Hasta pronto")) {				
 				estado = false;
