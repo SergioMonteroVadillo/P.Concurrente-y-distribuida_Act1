@@ -23,7 +23,7 @@ public class servidor {
 		
 		//Imprimimos mensaje de inicializacion del servidor
 		System.out.println("Servidor Iniciado");
-		
+				
 		try {
 		
 		//Bucle infinito para que el servidor este activo
@@ -36,7 +36,7 @@ public class servidor {
 			
 			//Variable que lee mensaje del cliente 
 			String solicitud = input.readLine();
-			
+			System.out.println(solicitud);
 			//Creamos variable para enviar al cliente que generado comunicación
 			PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 									
@@ -47,28 +47,28 @@ public class servidor {
 				int Nsolicitud = Integer.parseInt(solicitud);
 									
 					//Condicion para imprimir en buffer el mensaje a razon de solicitud introducida
-					switch (Nsolicitud){
-												
-						case 1:	out.println("AVISO -> Debe de registrarse para poder ingresar.");
-							break;
-						case 2:	out.println("AVISO -> Lo sentimos, no se pueden realizar mas registros.");
-							break;
-						case 3:	out.println("AVISO -> Esta opción se encuetra en mantenimiento, disculpe las molestias.");
-							break;
-						case 4:	out.println("AVISO -> Para darse de baja, escriba un correo a bajas@chat.net.\n");
-							break;
-						case 5:	out.println("menu");
-							break;
-						case 6:	out.println("Hasta pronto");
-							break;
-						default:
-							out.println("Solo se aceptan las solicitudes mostradas, por favor introduzca un número de la lista.");
-					}
+				switch (Nsolicitud){
+
+				case 1:	out.println("AVISO -> Debe de registrarse para poder ingresar.");
+					break;
+				case 2:	out.println("AVISO -> Lo sentimos, no se pueden realizar mas registros.");
+					break;
+				case 3:	out.println("AVISO -> Esta opción se encuetra en mantenimiento, disculpe las molestias.");
+					break;
+				case 4:	out.println("AVISO -> Para darse de baja, escriba un correo a bajas@chat.net.\n");
+					break;
+				case 5:	out.println("MENU -> 1-Entrar  2-Registrarase  3-Manual  4-Bajas  5-Menu  6-Salir");
+					break;
+				case 6:	out.println("Hasta pronto");
+					break;
+				default:
+					out.println("Solo se aceptan las solicitudes mostradas, por favor introduzca un número de la lista.");
+				}
 				
 			}
 			else {
 				out.println("Por favor introduzca la solicitud de forma numérica.");
-			}				
+			}		
 						
 			socket.close();
 		}
